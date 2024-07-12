@@ -7,4 +7,33 @@
   body{
     @apply font-primary bg-primary text-white leading-loose;
   }
+  .h1{
+    @apply text-[48px] xl:text-[80px] leading-[1,1] font-semibold
+  }
+  .h2{
+    @apply text-[26px] xl:text-[48px] leading-[1,1] font-semibold
+  }
+  .h3{
+    @apply text-[20px] xl:text-[24px] leading-[1,1] font-semibold
+  }
+  .text-outline{
+    -webkit-text-stroke:1px #ffffff;
+  }
+  .text-outline-hover{
+    -webkit-text-stroke:1px #00ff99;
+  }
+}
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink__gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white__gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
 }
