@@ -2,8 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt} from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion"; 
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
@@ -12,7 +11,7 @@ const info = [
   {
     icon:<FaPhoneAlt />,
     title:"Phone",
-    desc:"Nsit xD"
+    desc:"+33699329469"
   },
   {
     icon:<FaEnvelope />,
@@ -46,7 +45,7 @@ const Contact = () => {
       <div className="mx-auto container">
         <div className="flex flex-col xl:flex-row gap-[30px]">
           <div className="xl:h-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl" ref={form} onSubmit={sendEmail}>
+            <form className="flex items-center flex-col gap-6 p-10 bg-[#27272c] rounded-xl" ref={form} onSubmit={sendEmail}>
               <h3 className="text-4xl text-accent-hover">Let's work together!</h3>
               <p className="text-white/60">Be sure to specify your needs as well as the tools needed and your budget.</p>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

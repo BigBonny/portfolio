@@ -5,12 +5,10 @@ import { TbBrandFiverr } from "react-icons/tb";
 import { FaSquareUpwork } from "react-icons/fa6";
 
 const socials = [
-    {icon:<FaGithub />, path:"/"},
-    {icon:<FaTwitter />, path:"/"},
-    {icon:<FaLinkedin />, path:"/"},
-    {icon:<FaInstagram />, path:"/"},
-    {icon:<FaSquareUpwork />, path:"/"},
-    {icon:<TbBrandFiverr />, path:"/"},
+    {icon:<FaTwitter />, path:"https://x.com/BigBonny_Code"},
+    {icon:<FaLinkedin />, path:"https://www.linkedin.com/in/big-bonny-a03943318/"},
+    {icon:<FaSquareUpwork />, path:"https://www.upwork.com/freelancers/~0132ddc77b8938c75f"},
+    {icon:<TbBrandFiverr />, path:"https://www.fiverr.com/bigbonny?up_rollout=true"},
 ]
 
 const Socials = ({ containerStyles, iconStyles }) => {
@@ -25,4 +23,4 @@ const Socials = ({ containerStyles, iconStyles }) => {
   )
 }
 
-export default Socials
+export default Socials;
