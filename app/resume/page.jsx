@@ -17,7 +17,7 @@ const about =
       },
       {
         fieldName:"Phone",
-        fieldInfo:"i forgot"
+        fieldInfo:"+33699329469"
       },
       {
         fieldName:"Experience",
