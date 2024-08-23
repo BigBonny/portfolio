@@ -30,7 +30,7 @@ const projects = [
     title: "project 2",
     desc: 'This is my first real project, I made a website for the company "Innovative Labs"...',
     stack: [{ name: "React" }, { name: "Tailwind" }, { name: "Nextjs" }],
-    image: "/innovative-labs.PNG",
+    image: "/pls.PNG",
     video: "",
     live: "",
     github: "",
