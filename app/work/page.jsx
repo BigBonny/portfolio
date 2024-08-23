@@ -17,7 +17,7 @@ const projects = [
     num: "01",
     category: "fullstack",
     title: "project 1",
-    desc: "I have decided with a couple of friends to make a content streaming website resembling Twitch or Youtube live, I was in charge of making the website while my friends were in charge of other tasks such as promotion... Unfortunately, I couldn't publish the site as I would need to pay above our budget. Regardless, the project still remains my biggest project so far, but I'll be more than happy to make even bigger and better projects in the future :)",
+    desc: "I have decided with a couple of friends to make a content streaming website resembling Twitch or Youtube live...",
     stack: [{ name: "Nextjs" }, { name: "Tailwind" }, { name: "SQL" }],
     image: "",
     video: "/Streaming-website.mp4",
@@ -27,24 +27,26 @@ const projects = [
   {
     num: "02",
     category: "fullstack",
-    title: "project 1",
-    desc: 'This is my first real project, I made a website for the company "Innovative Labs" that was generous enough to offer me the job as a complete beginner.',
-    stack: [{ name: "React" }, { name: "Tailwind" }, { name: "Vite" }],
+    title: "project 2",
+    desc: 'This is my first real project, I made a website for the company "Innovative Labs"...',
+    stack: [{ name: "React" }, { name: "Tailwind" }, { name: "Nextjs" }],
     image: "/innovative-labs.PNG",
     video: "",
     live: "",
     github: "",
+    link: "https://innovative-labs-2023.vercel.app/",
   },
   {
     num: "03",
     category: "frontend",
-    title: "project 1",
-    desc: "This is my first ever project, it isn't anything impressive, I remember focusing more on the logic, I had a friend of mine always telling me to one up the website's functionalities by adding new functions like adding a special characters functions and a cap letters functions... It was a fun challenge although the design was pretty below-average (to say the least), but to be fair I was only focusing on the javascript functionalities, it is pretty nice to see how far my coding journey has come along and even tho this technically isn't my VERY first website, as I have unfortunately lost it, it still is one of the first and one of the most memorable projects I made.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }],
+    title: "project 3",
+    desc: "This is my first ever project...",
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
     image: "/project1.PNG",
     video: "",
     live: "",
     github: "",
+    link: "https://66c8706104cb70721f8ffe65--stupendous-entremet-07e772.netlify.app/",
   },
 ];
 
@@ -85,34 +87,34 @@ const Work = () => {
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
-                <Link href={project.live}>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent-hover" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>
-                          Live project
-                        </p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-                <Link href={project.github}>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent-hover" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>
-                          Github repository
-                        </p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.live && (
+                  <Link href={project.live}>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
+                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent-hover" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
+                {project.github && (
+                  <Link href={project.github}>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group ">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent-hover" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -126,16 +128,53 @@ const Work = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full rounded-[10px]">
-                  <div className="h-[460px] relative flex justify-center items-center bg-pink-50/20 rounded-[10px]">
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-[10px]"></div>
-                    <div className="relative w-full h-full">
-                      {index === 0 ? (
-                        <video src={project.video} autoPlay loop muted className="object-fill w-full h-full rounded-[10px] cursor-pointer hover:object-cover"/>
-                      ) : (
-                        <Image src={project.image} fill className="object-fill rounded-[10px] cursor-pointer hover:object-cover" alt={project.name} />
-                      )}
+                  {project.link ? (
+                    <Link href={project.link}>
+                      <div className="h-[460px] relative flex justify-center items-center bg-pink-50/20 rounded-[10px] cursor-pointer group overflow-hidden">
+                        <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-[10px]"></div>
+                        <div className="relative w-full h-full">
+                          {index === 0 ? (
+                            <video
+                              src={project.video}
+                              autoPlay
+                              loop
+                              muted
+                              className="object-fill w-full h-full rounded-[10px] transition-transform duration-500 group-hover:scale-110"
+                            />
+                          ) : (
+                            <Image
+                              src={project.image}
+                              fill
+                              className="object-fill rounded-[10px] transition-transform duration-500 group-hover:scale-110"
+                              alt={project.name}
+                            />
+                          )}
+                        </div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="h-[460px] relative flex justify-center items-center bg-pink-50/20 rounded-[10px] overflow-hidden">
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 rounded-[10px]"></div>
+                      <div className="relative w-full h-full">
+                        {index === 0 ? (
+                          <video
+                            src={project.video}
+                            autoPlay
+                            loop
+                            muted
+                            className="object-fill w-full h-full rounded-[10px]"
+                          />
+                        ) : (
+                          <Image
+                            src={project.image}
+                            fill
+                            className="object-fill rounded-[10px]"
+                            alt={project.name}
+                          />
+                        )}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </SwiperSlide>
               ))}
               <WorkSliderButton
